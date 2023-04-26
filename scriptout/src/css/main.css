@@ -1,0 +1,349 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&family=Vollkorn&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#logo {
+  color: #9E10EA;
+  font-size: 5rem;
+  font-family: "unbounded";
+  margin-top: 1rem;
+}
+
+#logo-s {
+  color: #9E10EA;
+  font-size: 2rem;
+  font-family: "unbounded";
+  margin: 1rem 1rem 0 1rem;
+}
+
+p {
+  color: #E5D1FF;
+  padding: 1rem;
+  font-family: "Vollkorn";
+  font-size: 1.5rem;
+}
+
+#go-to-game {
+  align-self: center;
+  margin: 2rem;
+}
+
+.escape-text {
+  font-family: "Caveat";
+  font-size: 3rem;
+  padding: 0;
+}
+
+.escape-text-s {
+  font-family: "Caveat";
+  font-size: 1.5rem;
+  padding: 0;
+}
+
+h2 {
+  color: #9E10EA;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.menu-btn {
+  background-color: #0E0E86;
+  color: #9E10EA;
+  border: none;
+  margin: 0.7rem 0 0.7rem 1rem;
+  transform-origin: left bottom;
+  transform: skewX(-40deg);
+  width: 50vw;
+  text-decoration: none;
+  right: 0;
+}
+.menu-btn p {
+  color: #9E10EA;
+  transform: skewX(40deg);
+  font-weight: bold;
+  font-size: 3rem;
+  font-family: "unbounded";
+  margin: 0;
+}
+.menu-btn:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+}
+
+#go-back {
+  height: 70px;
+  width: 70px;
+  border: none;
+  background-color: #0E0E86;
+  border-radius: 3rem;
+  margin: 1rem;
+  align-self: flex-start;
+}
+#go-back:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+}
+#go-back i {
+  color: #9E10EA;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  border: none;
+  background-color: #0E0E86;
+  color: #9E10EA;
+  border-radius: 3rem;
+  margin: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.7rem 1rem;
+}
+.btn:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+}
+
+#questionmark, #pop-up-menu {
+  height: 70px;
+  width: 70px;
+  border: 3px solid #E5D1FF;
+  background-color: transparent;
+  border-radius: 3rem;
+  margin: 1rem;
+  align-self: flex-end;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#questionmark:hover, #pop-up-menu:hover {
+  background-color: #9E10EA;
+  box-shadow: 0 0 10px #E5D1FF;
+  transition: ease-in-out 0.3s;
+  cursor: pointer;
+}
+#questionmark i, #pop-up-menu i {
+  color: #E5D1FF;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+}
+
+#pop-up-menu {
+  right: 100px;
+}
+
+#pop-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #060628;
+  border: solid 3px #0E0E86;
+  padding: 1rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 120px;
+  right: 30px;
+}
+#pop-menu .pop-menu-btn {
+  background-color: #0E0E86;
+  color: #9E10EA;
+  border: none;
+  border-radius: 3rem;
+  padding: 2rem 1rem;
+  font-family: "unbounded";
+  font-size: 2rem;
+  width: 300px;
+}
+#pop-menu .pop-menu-btn:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+}
+
+#code-input {
+  font-size: 3rem;
+  padding: 1rem;
+  border-radius: 3rem;
+  text-align: center;
+  font-weight: bold;
+  width: 300px;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  margin: 5rem 0 0 0;
+}
+#code-input:active {
+  border-color: #9E10EA;
+}
+
+body {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #060628;
+}
+body a:link {
+  text-decoration: none;
+  align-self: flex-start;
+}
+body a:link #small-logo {
+  max-width: 300px;
+  width: 100%;
+}
+body nav {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+body .info-block {
+  background-color: #0E0E86;
+  width: 80vw;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 2rem;
+}
+body .info-block h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+body .info-block p {
+  color: #E5D1FF;
+}
+
+#pop-up {
+  background-color: #E5D1FF;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#pop-up p {
+  color: #9E10EA;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 1rem 1rem 1rem;
+}
+#pop-up #pop-up-btn {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 3px solid #060628;
+  border-radius: 3rem;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#pop-up #pop-up-btn:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+  background-color: #060628;
+}
+#pop-up #pop-up-btn i {
+  color: #060628;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+#pop-up #pop-up-btn i:hover {
+  color: #E5D1FF;
+}
+
+.article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+.article p {
+  width: 80%;
+}
+
+.task-bubble {
+  background-color: #0E0E86;
+  border-radius: 2rem;
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem;
+}
+
+.row-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column-div {
+  display: flex;
+  flex-direction: column;
+}
+
+video {
+  border: 4px solid #9E10EA;
+}
+
+.taskbutton {
+  background-color: #0E0E86;
+  padding: 1rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 1rem;
+  color: #E5D1FF;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+/*# sourceMappingURL=main.css.map */

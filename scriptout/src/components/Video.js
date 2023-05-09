@@ -5,7 +5,7 @@ export default function Video() {
 
   return(
     <>
-    <video width="635" height="360" autoPlay loop muted>
+    <video id="video" width="635" height="358" autoPlay loop muted>
     <source src={ScriptoutVideo} type="video/mp4"></source>
     </video>
     </>

@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&family=Vollkorn&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +32,7 @@ header {
 p {
   color: #E5D1FF;
   padding: 1rem;
-  font-family: "Vollkorn";
+  font-family: "Noto Sans";
   font-size: 1.5rem;
 }
 
@@ -58,20 +59,32 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  color: #E5D1FF;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-self: flex-start;
+  padding: 1rem;
+}
+
+#video {
+  margin: 0 4rem 0 8rem;
+}
+
 .menu-btn {
   background-color: #0E0E86;
   color: #9E10EA;
   border: none;
   margin: 0.7rem 0 0.7rem 1rem;
-  transform-origin: left bottom;
-  transform: skewX(-40deg);
+  clip-path: polygon(15% 0%, 90% 0%, 90% 100%, 0% 100%);
   width: 50vw;
   text-decoration: none;
-  right: 0;
+  right: 0px;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
+  overflow: hidden;
 }
 .menu-btn p {
   color: #9E10EA;
-  transform: skewX(40deg);
   font-weight: bold;
   font-size: 3rem;
   font-family: "unbounded";
@@ -93,6 +106,7 @@ h2 {
   border-radius: 3rem;
   margin: 1rem;
   align-self: flex-start;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
 }
 #go-back:hover {
   box-shadow: 0 0 10px #E5D1FF;
@@ -117,6 +131,7 @@ h2 {
   font-size: 2rem;
   font-weight: bold;
   padding: 0.7rem 1rem;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
 }
 .btn:hover {
   box-shadow: 0 0 10px #E5D1FF;
@@ -210,6 +225,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: #060628;
+  overflow-x: hidden;
 }
 body a:link {
   text-decoration: none;
@@ -227,20 +243,31 @@ body nav {
 body .info-block {
   background-color: #0E0E86;
   width: 80vw;
-  padding: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  margin-top: 1rem;
+  padding: 2rem;
   border-radius: 2rem;
 }
 body .info-block h2 {
   font-size: 3rem;
   text-transform: uppercase;
   font-weight: bold;
+  width: 100%;
+  text-align: center;
 }
 body .info-block p {
   color: #E5D1FF;
+}
+
+#settings-article {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding-bottom: 5rem;
+  justify-content: center;
+}
+
+#rules-article {
+  padding-bottom: 5rem;
 }
 
 #pop-up {
@@ -300,6 +327,9 @@ body .info-block p {
   flex-direction: column;
   padding: 1rem;
 }
+.article h2 {
+  font-size: 3rem;
+}
 .article p {
   width: 80%;
 }
@@ -310,6 +340,10 @@ body .info-block p {
   max-width: 800px;
   width: 100%;
   margin: 1rem;
+  text-align: center;
+}
+.task-bubble p {
+  color: #E5D1FF;
 }
 
 .row-div {
@@ -327,13 +361,41 @@ video {
   border: 4px solid #9E10EA;
 }
 
+#taskbubbles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
 .taskbutton {
   background-color: #0E0E86;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   border: none;
   border-radius: 1rem;
   color: #E5D1FF;
+  font-size: 1rem;
+  font-weight: bold;
+  max-width: 120px;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
+}
+.taskbutton:hover {
+  box-shadow: 0 0 10px #0E0E86;
+}
+
+.chosen-taskbutton {
+  background-color: #9E10EA;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  color: #E5D1FF;
+  font-size: 1rem;
+  font-weight: bold;
+  max-width: 120px;
+  box-shadow: 0 0 10px #9E10EA;
 }
 
 .buttons {
@@ -344,6 +406,122 @@ video {
 
 .hidden {
   visibility: hidden;
+}
+
+#gang {
+  width: 600px;
+}
+
+.correct-answer {
+  color: rgb(40, 189, 40);
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.false-answer {
+  color: rgb(243, 42, 42);
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#hint-bubble {
+  background-color: #E5D1FF;
+  max-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+  right: 140px;
+  top: 680px;
+}
+#hint-bubble p {
+  color: #9E10EA;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0 1rem 1rem 1rem;
+}
+#hint-bubble #pop-up-btn {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 3px solid #060628;
+  border-radius: 3rem;
+  align-self: flex-end;
+  margin: 0.5rem 0.5rem 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#hint-bubble #pop-up-btn:hover {
+  box-shadow: 0 0 10px #E5D1FF;
+  background-color: #E5D1FF;
+  transition: ease-in-out 0.3s;
+  color: #9E10EA;
+  cursor: pointer;
+  background-color: #060628;
+}
+#hint-bubble #pop-up-btn i {
+  color: #060628;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+#hint-bubble #pop-up-btn i:hover {
+  color: #E5D1FF;
+}
+
+#hint-btn {
+  width: 100px;
+  align-self: center;
+  position: relative;
+}
+
+#current-task {
+  align-self: flex-end;
+}
+
+.task-alternatives {
+  padding: 0.3rem;
+}
+
+#setting {
+  background-color: #E5D1FF;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+#setting > * {
+  border: 2px solid transparent;
+}
+#setting > *:hover {
+  cursor: pointer;
+  border-color: #9E10EA;
+  border-color: #9E10EA;
+}
+#setting .setting-btn {
+  padding: 0.7rem;
+  border-radius: 2rem;
+  color: #060628;
+  font-weight: bold;
+  background-color: transparent;
+  font-size: 1.3rem;
+}
+#setting .active-setting {
+  padding: 0.7rem;
+  border-radius: 2rem;
+  background-color: #9E10EA;
+  color: #E5D1FF;
+  font-weight: bold;
+  box-shadow: 0 0 10px #9E10EA;
+  transition: ease-in-out 0.2s;
+  font-size: 1.3rem;
 }
 
 /*# sourceMappingURL=main.css.map */

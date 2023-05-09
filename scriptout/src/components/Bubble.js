@@ -1,6 +1,6 @@
-export default function Bubble({taskText}) {
+export default function Bubble({taskText, answerMessage}) {
   return(
-    <div class="task-bubble">
+    <div className={taskText ? "task-bubble" : "hidden"}>
       <p>{taskText}</p>
     </div>
   )

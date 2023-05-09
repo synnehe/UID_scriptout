@@ -8,7 +8,7 @@ export default function HomePage() {
       <Logo />
       <div className="row-div">
         <Video />
-        <MenuButtons />
+        <MenuButtons id="menubuttons"/>
       </div>
     </>
   )

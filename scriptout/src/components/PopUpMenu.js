@@ -5,8 +5,8 @@ export default function PopUpMenu({activeMenu, setActiveMenu}) {
     <nav id="pop-menu" className={activeMenu ? null : "hidden"}>
       <Link to="/"><button className="pop-menu-btn">Gå til forside</button></Link>
       <Link to="/regler"><button className="pop-menu-btn">Regler</button></Link>
-      <Link to="/innstillinger"><button className="pop-menu-btn">Innstillinger</button></Link>
       <Link to="/teori"><button className="pop-menu-btn">Teori</button></Link>
+      <Link to="/innstillinger"><button className="pop-menu-btn">Innstillinger</button></Link>
     </nav>
   )
 }

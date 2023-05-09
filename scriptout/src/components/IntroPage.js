@@ -19,7 +19,7 @@ export default function IntroPage() {
 
     const checkInput = () => {
         const inputValue = inputRef.current.value;
-        const codeKey = "2UIN23"
+        const codeKey = "R4TW59"
 
         if (inputValue === codeKey){
             setCodeVerified(true)

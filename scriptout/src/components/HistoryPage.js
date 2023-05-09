@@ -36,12 +36,14 @@ export default function HistoryPage() {
     </nav>
     <article className="article">
       <h2>Spillets historie</h2>
-      <p>“Velkommen til ScriptOut-hotellet! Det var en gang en lærer som besøkte oss i år 2022. Han hadde med seg et hellig samlingshefte av koder og løsninger, men dessverre døde han på hotellet i Januar 2023. Samlingen forsvant med han, men det sies at hans spøkelse fremdeles leter på hotellet. 
-
-          Det blir din jobb å gi han ro og finne disse kode-delene som er spredt rundt på hotellet. Sammen med brettspillet kan du løse oppgavene i de 6 forskjellige rommene i hotellet. Bruk hintene og løs de mange kode mysteriene som befinner seg i hotellet. 
-
-          Script deg ut av hotellet før all kunnskap går tapt. 
-          Lykke til! ”</p>
+      <p>Velkommen til ScriptOut! Det var en gang en lærer som hadde et hellig samlingshefte
+         av koder og løsninger som han hadde jobbet med over lang tid, men dessverre døde han 
+         i huset sitt i januar 2023. Samlingen forsvant med ham, men det sies at hans spøkelse 
+         hjemsøker huset, på leting etter den hellige samlingen sin. Det blir din jobb å gi ham 
+         ro og finne disse kode-delene som er spredt rundt i huset. Sammen med brettspillet kan 
+         du løse oppgavene i de 6 forskjellige rommene i huset. Bruk hintene og løs de mange 
+         kodemysteriene som befinner seg i huset. Script deg ut av det hjemsøkte huset før all 
+         kunnskap går tapt. Lykke til! </p>
     </article>
     <div className="buttons">
       <GoBackBtn />

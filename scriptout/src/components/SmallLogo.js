@@ -5,7 +5,7 @@ export default function SmallLogo() {
     <Link to="/">
       <header id="small-logo">
         <h1 id="logo-s">ScriptOut</h1>
-        <p class="escape-text-s">Escape the house!</p>
+        <p className="escape-text-s">Escape the house!</p>
       </header>
     </Link>
   )

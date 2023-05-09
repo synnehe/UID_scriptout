@@ -36,16 +36,10 @@ export default function InfoPage() {
     </nav>
     <article className="article">
       <h2>Rom 1: Variabler</h2>
-      <p>“Du har ankommet lobbyen, og letingen kan starte!
-
-          I dette første rommet skal du finne kodebitene om temaet variabler, som er et viktig grunnleggende tema i Javascript. God koding!” 
-
-          Variabler
-          Variabler er noe som du forteller dataen skal  inneholde noe, du selv bestemmer om det er tall, en tekst eller annet. 
-
-          Eksempel på hvordan det gjøres er å bruke: let, const. Kode: let x = 0. Da lar du x-bokstaven inneholde tallet 0. Dette er en fin start!”
-
-          </p>
+      <p>Du har ankommet huset, og letingen kan starte! I dette første rommet 
+        skal du finne kodebitene om temaet variabler, som er et viktig grunnleggende 
+        tema i Javascript. God koding! 
+      </p>
     </article>
     <div className="buttons">
       <GoBackBtn />

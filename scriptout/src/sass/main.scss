@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&family=Vollkorn&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
 
 
 $primary: #0E0E86;
@@ -14,7 +15,8 @@ $medium-font: 2rem;
 $big-font: 3rem;
 $big-font-family: "unbounded";
 $handwritten-text: "Caveat";
-$small-font-family: 'Vollkorn';
+$small-font-family: 'Noto Sans';
+//$small-font-family: 'Vollkorn';
 
 @mixin hover {
   box-shadow: 0 0 10px $light;
@@ -28,6 +30,51 @@ $small-font-family: 'Vollkorn';
 display: flex;
 justify-content: center;
 align-items: center;
+}
+
+@mixin pop-up-info {
+  background-color: $light;
+  max-width: 300px;
+  @include center;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 1rem;
+  position: absolute;
+
+  p {
+    color: $secondary;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  #pop-up-btn {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 3px solid $background;
+    border-radius: 3rem;
+    align-self: flex-end;
+    margin: 0.5rem 0.5rem 0;
+    padding: 0.5rem;
+    @include center;
+
+    &:hover {
+      @include hover;
+      background-color: $background;
+    }
+
+    i {
+      color: $background;
+      font-weight: bolder;
+      font-size: 1.3rem;
+
+      &:hover {
+        color: $light;
+      }
+    }
+  }
 }
 
 *{
@@ -85,20 +132,32 @@ h2 {
   font-weight: bold;
 }
 
+h3 {
+  color: $light;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-self: flex-start;
+  padding: 1rem;
+}
+
+#video {
+  margin: 0 4rem 0 8rem;
+}
+
 .menu-btn {
   background-color: $primary;
   color: $secondary; 
   border: none; 
   margin: 0.7rem 0 0.7rem 1rem;
-  transform-origin: left bottom;
-  transform: skewX(-40deg);
+  clip-path: polygon(15% 0%, 90% 0%, 90% 100%, 0% 100%);
   width: 50vw;
   text-decoration: none;
-  right: 0;
+  right: 0px;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
+  overflow: hidden;
 
   p {
     color: $secondary;
-    transform: skewX(+40deg);
     font-weight: bold;
     font-size: $big-font;
     font-family: $big-font-family;
@@ -118,6 +177,7 @@ h2 {
   border-radius: 3rem;
   margin: 1rem;
   align-self: flex-start;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
 
   &:hover {
     @include hover;
@@ -140,6 +200,7 @@ h2 {
   font-size: $medium-font;
   font-weight: bold;
   padding: 0.7rem 1rem;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
 
   &:hover {
     @include hover;
@@ -228,6 +289,7 @@ body {
   @include center;
   flex-direction: column;
   background-color: $background;
+  overflow-x: hidden;
 
   a:link {
     text-decoration: none;
@@ -239,6 +301,7 @@ body {
     }
   }
 
+
   nav {
     display: flex;
     flex-direction: row;
@@ -248,15 +311,16 @@ body {
   .info-block {
     background-color: $primary;
     width: 80vw;
-    padding: 1rem;
-    @include center;
-    flex-direction: column;
+    margin-top: 1rem;
+    padding: 2rem;
     border-radius: 2rem;
     
     h2 {
       font-size: $big-font;
       text-transform: uppercase;
       font-weight: bold;
+      width: 100%;
+      text-align: center;
     }
   
     p {
@@ -266,57 +330,32 @@ body {
   
 }
 
+#settings-article {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding-bottom: 5rem;
+  justify-content: center;
+}
+
+#rules-article {
+  padding-bottom: 5rem;
+}
+
 #pop-up {
-  background-color: $light;
-  max-width: 300px;
-  @include center;
-  flex-direction: column;
-  width: 100%;
-  margin: 1rem;
-  border-radius: 1rem;
-  position: absolute;
+  @include pop-up-info();
   top: 0;
   right: 0;
-
-  p {
-    color: $secondary;
-    font-weight: bold;
-    font-size: 1.2rem;
-    padding: 0 1rem 1rem 1rem;
-  }
-
-  #pop-up-btn {
-    width: 30px;
-    height: 30px;
-    background-color: transparent;
-    border: 3px solid $background;
-    border-radius: 3rem;
-    align-self: flex-end;
-    margin: 0.5rem 0.5rem 0;
-    padding: 0.5rem;
-    @include center;
-
-    &:hover {
-      @include hover;
-      background-color: $background;
-    }
-
-    i {
-      color: $background;
-      font-weight: bolder;
-      font-size: 1.3rem;
-
-      &:hover {
-        color: $light;
-      }
-    }
-  }
 }
 
 .article {
   @include center;
   flex-direction: column;
   padding: 1rem;
+
+  h2 {
+    font-size: 3rem;
+  }
 
   p {
     width: 80%;
@@ -329,6 +368,11 @@ body {
   max-width: 800px;
   width: 100%;
   margin: 1rem;
+  text-align: center;
+
+  p {
+    color: $light;
+  }
 }
 
 .row-div {
@@ -346,13 +390,40 @@ video {
   border: 4px solid $secondary;
 }
 
+#taskbubbles {
+  @include center;
+  flex-direction: column;
+  margin: 1rem;
+}
+
 .taskbutton {
   background-color: $primary;
   padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   border: none;
   border-radius: 1rem;
   color: $light;
+  font-size: 1rem;
+  font-weight: bold;
+  max-width: 120px;
+  box-shadow: 0 0 10px rgb(14, 14, 14);
+
+  &:hover {
+    box-shadow: 0 0 10px $primary;
+  }
+}
+
+.chosen-taskbutton {
+  background-color: $secondary;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1rem;
+  color: $light;
+  font-size: 1rem;
+  font-weight: bold;
+  max-width: 120px;
+  box-shadow: 0 0 10px $secondary;
 }
 
 .buttons {
@@ -363,3 +434,78 @@ video {
   visibility: hidden;
 }
 
+#gang {
+  width: 600px;
+}
+
+.correct-answer {
+  color: rgb(40, 189, 40);
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.false-answer {
+  color: rgb(243, 42, 42); 
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#hint-bubble {
+  @include pop-up-info();
+  right: 140px;
+  top: 680px;
+}
+
+#hint-btn {
+  width: 100px;
+  align-self: center;
+  position: relative;
+}
+
+#current-task {
+  align-self: flex-end;
+}
+
+.task-alternatives {
+  padding: 0.3rem;
+}
+
+#setting {
+  background-color: $light;
+  padding: 0.5rem;
+  border-radius: 2rem;
+  display: flex;
+  gap: 1rem;
+
+  >* {
+    border: 2px solid transparent;
+
+    &:hover {
+      cursor: pointer;
+      border-color: $secondary;
+      border-color: $secondary;
+    }
+  }
+
+  .setting-btn {
+    padding: 0.7rem;
+    border-radius: 2rem;
+    color: $background;
+    font-weight: bold;
+    background-color: transparent; 
+    font-size: 1.3rem;
+  }
+
+  .active-setting {
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: $secondary;
+    color: $light;
+    font-weight: bold;
+    box-shadow: 0 0 10px $secondary;
+    transition: ease-in-out 0.2s;
+    font-size: 1.3rem;
+  }
+}

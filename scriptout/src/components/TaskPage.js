@@ -1,19 +1,20 @@
 import { useState } from "react";
-import Bubble from "./Bubble";
 import GoBackBtn from "./GoBackBtn";
 import PopUpMenuBtn from "./PopUpMenuBtn";
 import Questionmark from "./Questionmark";
 import SmallLogo from "./SmallLogo";
 import PopUp from "./PopUp";
 import PopUpMenu from "./PopUpMenu";
-import { Link } from "react-router-dom";
 import GoBtn from "./GoBtn";
-import Gang from "../maya/Gang-screenshot.png";
+import Gang from "../maya/Gang_uten.png";
 import Task1 from "./Task1";
+import Task2 from "./Task2";
+import Hint from "./Hint";
+import HintBubble from "./HintBubble";
 
 export default function TaskPage() {
 
-  const info = "Les introen til oppgaven og svar på oppgaven"
+  const info = "Les introen og svar på oppgaven"
 
   const [active, setActive] = useState(false)
 
@@ -27,28 +28,66 @@ export default function TaskPage() {
   const togglePopMenu = () => {
       setActiveMenu(!activeMenu)
   }
+  
+  const [hint, setHint] = useState(false)
+
+  const toggleHint = () => {
+      setHint(!hint)
+  }
+
+  let hintInfo = "Se på innsiden av skapdøra"
+
+
+  const [answers, setAnswers] = useState([false, false, false, false, false])
+  const [answerMessage, setAnswerMessage] = useState("")
+  const [currentTask, setCurrentTask] = useState(1)
+
+  function handleClick(){
+    if (currentTask === 1 && !answers[0] && answers[1] && !answers[2] && !answers[3] && answers[4]){
+      setAnswerMessage("Riktig svar!")
+    } else if (answers.includes(true)){
+      setAnswerMessage("Feil svar!")
+    }
+  }
+
+  function nextTask(){
+    if (answerMessage === "Riktig svar!"){
+    setCurrentTask(currentTask+1)
+    setAnswerMessage("")
+  }
+  }
+
+  function tryAgain(){
+    setAnswerMessage("")
+  }
+
 
   return(
-    <body>
-    <SmallLogo />
-    <nav>
-      <PopUpMenuBtn togglePopMenu={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-      <PopUpMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-      <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
-      <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
-    </nav>
-    <div className="row-div">
-      <div>
-        <Bubble taskText={"Forklaring: En variabel kan deklareres med enten let, const eller var. Ved bruk av let kan man alltid endre verdien til variabelen senere. Om du bruker const derimot, kan verdien aldri endres. Dette er en sikkerhet hvis du vet at du ikke kommer til å ønske å endre verdien på noe, så det ikke skjer ved uhell."}/>
-        <Bubble taskText={'Du legger merke til at noen av trappetrinnene er for ødelagte til å gå på. const trinn1 = "knirkende trinn" let trinn2 = “trinn med skader”const trinn3 = “trinn med flekk på” const trinn4 = “trinn som ser ubrukt ut” let trinn5 = “trinn med en manglende treplate”. Finn ut hvilke trinn som kan fikses og noter det ned'}/>
-        <Task1 />
+    <>
+      <SmallLogo />
+      <nav>
+        <PopUpMenuBtn togglePopMenu={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
+        <PopUpMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
+        <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+        <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
+      </nav>
+      <div className="row-div">
+        <div id="taskbubbles"> 
+        <h2 id="current-task">Oppgave {currentTask}</h2>
+        {currentTask === 1 ? <Task1 answers={answers} answerMessage={answerMessage} setAnswers={setAnswers}/> : null}
+        {currentTask === 2 ? <Task2 answers={answers} answerMessage={answerMessage} setAnswers={setAnswers}/> : null}
+          <GoBtn answerMessage={answerMessage} go={answerMessage === "Feil svar!" ? "Prøv igjen" : "Gå til neste oppgave"} nextTask={nextTask} tryAgain={tryAgain}/>
+        </div>
+        <div className="column-div">
+          <img src={Gang} id="gang" width="680px" height="auto" alt="ScriptOut gang"/>
+          <Hint toggleHint={toggleHint} answerMessage={answerMessage}/>
+          <HintBubble hintInfo={hintInfo} hint={hint} toggleHint={toggleHint} answerMessage={answerMessage}/>
+        </div>
       </div>
-      <img src={Gang} id="gang" width="680px" height="auto" alt="ScriptOut gang"/>
-    </div>
-    <div className="buttons">
-      <GoBackBtn />
-      <Link to="/"><GoBtn go="Svar" /></Link>
-    </div>
-    </body>
+      <div className="buttons">
+        <GoBackBtn />
+        <GoBtn handleClick={handleClick} go="Svar"/>
+      </div>
+    </>
   )
 }

@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
 import GoBackBtn from "./GoBackBtn";
-import PopUpMenuBtn from "./PopUpMenuBtn";
-import Questionmark from "./Questionmark";
-import SmallLogo from "./SmallLogo";
 import GoBtn from "./GoBtn";
 import PopUp from "./PopUp";
 import { useState } from "react";
 import PopUpMenu from "./PopUpMenu";
+import PopUpBtn from "./PopUpBtn";
+import Logo from "./Logo";
 
 export default function HistoryPage() {
-
   const info = "Her får du presentert backstoryen til spillet. Klikk gå videre for å gå til første rom"
 
   const [active, setActive] = useState(false)
@@ -27,11 +25,11 @@ export default function HistoryPage() {
 
   return(
     <body>
-    <SmallLogo />
+    <Logo logo="small"/>
     <nav>
-      <PopUpMenuBtn togglePopMenu={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
+      <PopUpBtn btn="1" toggle={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
       <PopUpMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-      <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+      <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
       <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
     </nav>
     <article className="article">

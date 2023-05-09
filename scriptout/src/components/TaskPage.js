@@ -1,8 +1,6 @@
 import { useState } from "react";
 import GoBackBtn from "./GoBackBtn";
-import PopUpMenuBtn from "./PopUpMenuBtn";
-import Questionmark from "./Questionmark";
-import SmallLogo from "./SmallLogo";
+import PopUpBtn from "./PopUpBtn";
 import PopUp from "./PopUp";
 import PopUpMenu from "./PopUpMenu";
 import GoBtn from "./GoBtn";
@@ -11,6 +9,7 @@ import Task1 from "./Task1";
 import Task2 from "./Task2";
 import Hint from "./Hint";
 import HintBubble from "./HintBubble";
+import Logo from "./Logo";
 
 export default function TaskPage() {
 
@@ -64,11 +63,11 @@ export default function TaskPage() {
 
   return(
     <>
-      <SmallLogo />
+      <Logo logo="small"/>
       <nav>
-        <PopUpMenuBtn togglePopMenu={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
+        <PopUpBtn btn="1" toggle={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
         <PopUpMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-        <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+        <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
         <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
       </nav>
       <div className="row-div">

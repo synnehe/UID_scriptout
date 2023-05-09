@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import Logo from "./Logo";
 import PopUp from "./PopUp";
-import Questionmark from "./Questionmark";
 import { Link } from "react-router-dom";
+import PopUpBtn from "./PopUpBtn";
 
 export default function IntroPage() {
 
@@ -32,7 +32,7 @@ export default function IntroPage() {
     return(
         <body>
             <Logo />
-            <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+            <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
             <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
             <label />
             <input id="code-input" ref={inputRef} maxLength="6"  placeholder="N29K1M" onChange={checkInput}/>

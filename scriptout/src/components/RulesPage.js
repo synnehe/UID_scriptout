@@ -1,10 +1,10 @@
 import GoBackBtn from "./GoBackBtn";
-import SmallLogo from "./SmallLogo";
+import Logo from "./Logo";
 
 export default function RulesPage() {
   return(
     <body>
-    <SmallLogo />
+    <Logo logo="small"/>
     <article id="rules-article" className="info-block">
       <h2>Regler</h2>
       <p>Spillet foregår både digitalt og analogt ved at oppgavene 

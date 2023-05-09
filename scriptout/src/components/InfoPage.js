@@ -1,12 +1,11 @@
 import GoBackBtn from "./GoBackBtn";
 import GoBtn from "./GoBtn";
-import Questionmark from "./Questionmark";
-import PopUpMenuBtn from "./PopUpMenuBtn";
-import SmallLogo from "./SmallLogo";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import PopUp from "./PopUp";
 import PopUpMenu from "./PopUpMenu";
+import PopUpBtn from "./PopUpBtn";
+import Logo from "./Logo";
 
 export default function InfoPage() {
 
@@ -27,11 +26,11 @@ export default function InfoPage() {
 
   return(
     <body>
-    <SmallLogo />
+    <Logo logo="small"/>
     <nav>
-      <PopUpMenuBtn togglePopMenu={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
+      <PopUpBtn btn="1" toggle={togglePopMenu} activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
       <PopUpMenu activeMenu={activeMenu} setActiveMenu={setActiveMenu}/>
-      <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+      <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
       <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
     </nav>
     <article className="article">

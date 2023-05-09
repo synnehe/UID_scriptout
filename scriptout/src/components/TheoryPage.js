@@ -1,8 +1,8 @@
 import { useState } from "react"
 import GoBackBtn from "./GoBackBtn"
 import PopUp from "./PopUp"
-import Questionmark from "./Questionmark"
-import SmallLogo from "./SmallLogo"
+import PopUpBtn from "./PopUpBtn"
+import Logo from "./Logo"
 
 export default function TheoryPage() {
 
@@ -16,8 +16,8 @@ export default function TheoryPage() {
 
   return(
     <body>
-    <SmallLogo />
-    <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+    <Logo logo="small"/>
+    <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
     <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
     <article className="info-block">
       <h2>Teori</h2>

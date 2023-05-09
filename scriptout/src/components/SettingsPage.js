@@ -1,9 +1,9 @@
 import { useState } from "react";
 import GoBackBtn from "./GoBackBtn";
-import Questionmark from "./Questionmark";
 import Setting from "./Setting";
-import SmallLogo from "./SmallLogo";
 import PopUp from "./PopUp";
+import PopUpBtn from "./PopUpBtn";
+import Logo from "./Logo";
 
 export default function SettingsPage() {
 
@@ -31,8 +31,8 @@ export default function SettingsPage() {
 
 return(
   <body>
-  <SmallLogo />
-  <Questionmark togglePopUp={togglePopUp} active={active} setActive={setActive}/>
+  <Logo logo="small"/>
+  <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
   <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
   <article id="settings-article" className="info-block">
     <h2>Innstillinger</h2>

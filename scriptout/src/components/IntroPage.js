@@ -6,7 +6,7 @@ import PopUpBtn from "./PopUpBtn";
 
 export default function IntroPage() {
 
-    const info = "Her skal du fylle inn din personlige kode som du fikk tildelt med brettspillet"
+    const info = "Her skal du fylle inn din personlige kode som du fikk tildelt med brettspillet. Info til sensor: bruk kode 'R4TW59'"
 
     const [active, setActive] = useState(false)
 
@@ -30,13 +30,15 @@ export default function IntroPage() {
 
    
     return(
+        <>
+        <Logo />
         <body>
-            <Logo />
             <PopUpBtn btn="2" toggle={togglePopUp} active={active} setActive={setActive}/>
             <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
             <label />
             <input id="code-input" ref={inputRef} maxLength="6"  placeholder="N29K1M" onChange={checkInput}/>
             <Link to={codeVerified === true ? "/" : null} id="go-to-game"><button className="btn">Gå til spillet</button></Link>
         </body>
+        </>
     )
 }

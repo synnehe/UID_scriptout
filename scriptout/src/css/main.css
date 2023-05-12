@@ -234,6 +234,7 @@ body a:link {
 body a:link #small-logo {
   max-width: 300px;
   width: 100%;
+  margin-left: 1rem;
 }
 body nav {
   display: flex;
@@ -344,6 +345,7 @@ body .info-block p {
 }
 .task-bubble p {
   color: #E5D1FF;
+  font-size: 1.2rem;
 }
 
 .row-div {
@@ -426,6 +428,13 @@ video {
   text-transform: uppercase;
 }
 
+#div-test {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
 #hint-bubble {
   background-color: #E5D1FF;
   max-width: 300px;
@@ -437,8 +446,9 @@ video {
   margin: 1rem;
   border-radius: 1rem;
   position: absolute;
+  position: absolute;
   right: 140px;
-  top: 680px;
+  top: -10px;
 }
 #hint-bubble p {
   color: #9E10EA;
@@ -479,15 +489,17 @@ video {
 #hint-btn {
   width: 100px;
   align-self: center;
-  position: relative;
 }
 
 #current-task {
   align-self: flex-end;
+  font-size: 2rem;
 }
 
 .task-alternatives {
   padding: 0.3rem;
+  text-align: start;
+  margin-left: 2rem;
 }
 
 #setting {
@@ -522,6 +534,28 @@ video {
   box-shadow: 0 0 10px #9E10EA;
   transition: ease-in-out 0.2s;
   font-size: 1.3rem;
+}
+
+#svar-input {
+  background-color: #0E0E86;
+  color: #E5D1FF;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  resize: none;
+  width: 90%;
+  margin: 1rem;
+  font-size: 1.3rem;
+  font-family: "Noto Sans";
+  height: 50px;
+}
+#svar-input::placeholder {
+  color: #b593e1;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+#svar-input:active {
+  outline-color: transparent;
 }
 
 /*# sourceMappingURL=main.css.map */

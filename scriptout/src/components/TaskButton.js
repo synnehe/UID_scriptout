@@ -1,18 +1,19 @@
 import { useState } from "react"
 
 export default function TaskButton({taskbutton, answers, setAnswers, index}) {
-  //const [answers, setAnswers] = useState([false, false, false, false, false])
   const [btnClass, setBtnClass] = useState("taskbutton")
 
   function toggleAnswer(i) {
     let updatedAnswers = []
 
-    updatedAnswers = [...answers] ? updatedAnswers = answers : updatedAnswers = [...answers] 
-    updatedAnswers[i] ? updatedAnswers[i] = false : updatedAnswers[i] = true; 
+      updatedAnswers = [answers] ? updatedAnswers = answers : updatedAnswers = [...answers] 
+      updatedAnswers[i] ? updatedAnswers[i] = false : updatedAnswers[i] = true; 
    
     setAnswers(updatedAnswers)
+    // Kilder: Fått hjelp av foreleser Tore-Marius til funksjon av svar-alternativ knapper.
+    // Også fått hjelp av chatGPT til å oppdatere updatedAnswers på bestemt index til true eller false
 
-    toggleBtnClass(i)
+    toggleBtnClass(i) 
   }
 
   function toggleBtnClass(i){
@@ -21,9 +22,6 @@ export default function TaskButton({taskbutton, answers, setAnswers, index}) {
   }
 
   return(
-    <button onClick={() => toggleAnswer(index)} className={btnClass}>{taskbutton}</button>
+    <button type="button" onClick={() => toggleAnswer(index)} className={btnClass}>{taskbutton}</button>
   )
 }
-/**setAnswers((prevState) => {
-      prevState[i]? answers.splice(i, 1, false) : answers.splice(i, 1, true)
-    }) */

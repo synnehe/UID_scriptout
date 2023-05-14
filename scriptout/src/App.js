@@ -14,8 +14,8 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path="/intro" element={<IntroPage />} />
-      <Route path="/" element={<HomePage />} />
+      <Route path="/" element={<IntroPage />} />
+      <Route path="/meny" element={<HomePage />} />
       <Route path="/regler" element={<RulesPage />}/>
       <Route path="/innstillinger" element={<SettingsPage />}/>
       <Route path="/teori" element={<TheoryPage />}/>

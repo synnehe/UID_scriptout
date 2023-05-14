@@ -39,7 +39,7 @@ export default function IntroPage() {
             <PopUp info={info} active={active} togglePopUp={togglePopUp}/>
             <label />
             <input id="code-input" maxLength="6"  placeholder="N29K1M" onChange={checkInput}/>
-            <Link to={codeVerified === true ? "/" : null} id="go-to-game"><button className="btn">Gå til spillet</button></Link>
+            <Link to={codeVerified === true ? "/meny" : null} id="go-to-game"><button className="btn">Gå til spillet</button></Link>
         </body>
         </>
     )

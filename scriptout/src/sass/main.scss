@@ -1,7 +1,6 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Unbounded:wght@700&family=Vollkorn&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap');
 
 
@@ -16,7 +15,6 @@ $big-font: 3rem;
 $big-font-family: "unbounded";
 $handwritten-text: "Caveat";
 $small-font-family: 'Noto Sans';
-//$small-font-family: 'Vollkorn';
 
 @mixin hover {
   box-shadow: 0 0 10px $light;

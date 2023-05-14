@@ -11,15 +11,17 @@ export default function InfoPage() {
 
   const info = "Her får du informasjon til rom 1 og temaet variabler. Klikk start for å gå til oppgave 1"
 
+  // State som toggler PopUp
   const [active, setActive] = useState(false)
-
+  // Funksjon som toggler staten active, kjører ved klikk på spørsmålstegn eller X på PopUp 
   const togglePopUp = () => {
     setActive(!active)
     console.log(active)
   }
 
+  // State som toggler PopUpMenu
   const [activeMenu, setActiveMenu] = useState(false)
-
+  // Funksjon som toggler staten activeMenu, kjører ved klikk på PopUpMenu
   const togglePopMenu = () => {
       setActiveMenu(!activeMenu)
   }
@@ -47,3 +49,8 @@ export default function InfoPage() {
     </body>
   )
 }
+
+/*
+* Side spiller kommer til etter å ha trykket seg videre fra historie-siden. Gir informasjon om rommet spiller ankommer. 
+* Blir routet til i App.js
+*/

@@ -12,3 +12,8 @@ export default function Video() {
     </>
   )
 }
+
+/*
+* Inneholder video av 3D prototypen av brettspillet
+* Brukes i komponentet HomePage
+*/

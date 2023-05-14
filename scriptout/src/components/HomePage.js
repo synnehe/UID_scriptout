@@ -13,3 +13,8 @@ export default function HomePage() {
     </>
   )
 }
+
+/*
+* Meny-siden spiller kommer til etter å ha skrevet inn riktig kode fra brettspillet
+* Blir routet til i App.js
+*/

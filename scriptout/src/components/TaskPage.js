@@ -14,34 +14,42 @@ import Logo from "./Logo";
 export default function TaskPage() {
 
   const info = "Les introen og svar på oppgaven"
-
+ 
+  // State som toggler PopUp
   const [active, setActive] = useState(false)
-
+  // Funksjon som toggler staten active, kjører ved klikk på spørsmålstegn eller X på PopUp 
   const togglePopUp = () => {
     setActive(!active)
     console.log(active)
   }
 
+  // State som toggler PopUpMenu
   const [activeMenu, setActiveMenu] = useState(false)
-
+  // Funksjon som toggler staten activeMenu, kjører ved klikk på PopUpMenu
   const togglePopMenu = () => {
       setActiveMenu(!activeMenu)
   }
   
+  // State som toggler HintBubble
   const [hint, setHint] = useState(false)
-
+  // Funksjon som toggler staten hint, kjører ved klikk på Hint
   const toggleHint = () => {
       setHint(!hint)
   }
 
-
+  // State som inneholder en array med fem verdier. En verdi på en bestemt index endres ved klikk på en bestemt svarknapp
   const [answers, setAnswers] = useState([false, false, false, false, false])
+  // State som inneholder melding om spiller har riktig eller feil svar
   const [answerMessage, setAnswerMessage] = useState("")
+  // State som inneholder nummer på oppgaven spiller befinner seg i 
   const [currentTask, setCurrentTask] = useState(1)
+  // State som inneholder svaret fra oppgave 2
   const [task2Answer, setTask2Answer] = useState("")
 
+  // State som toggler className på Bubble
   const [hideBubble, setHideBubble] = useState(false)
 
+  // Funksjon som toggler className på Bubble og som setter verdi i staten answerMessage
   function handleClick(){
     console.log(task2Answer)
     setHideBubble(true)
@@ -56,6 +64,10 @@ export default function TaskPage() {
     }
   }
 
+  /* 
+  * Funksjon som oppdaterer oppgavenumer, svarmelding etter forsøk på oppgave, 
+  * kjører funksjonen updateHint og setter staten hideBubble til false dersom answerMessage er "Riktig svar!"
+  */
   function nextTask(){
     if (answerMessage === "Riktig svar!"){
       setCurrentTask(currentTask+1)
@@ -68,17 +80,19 @@ export default function TaskPage() {
   const hintInfo1 = "Se på innsiden av skapdøra"
   const hintInfo2 = "På døra er det skrapet inn et symbol"
 
+  // State som inneholder informasjonen som vises i hintet (HintBubble)
   const [hintInfo, setHintInfo] = useState(hintInfo1)
 
+  // Funksjon som oppdaterer staten hintInfo og setter staten answerMessage tilbake til "" dersom oppgaven spiller befinner seg på er 2 
   function updateHint() {
     if (currentTask === 2){
       setHintInfo(hintInfo2)
       setAnswerMessage("")
     }
     console.log(currentTask)
-
   }
 
+  // Funksjon som setter staten answerMessage tilbake til "" og setter staten hideBubble til false 
   function tryAgain(){
     setAnswerMessage("")
     setHideBubble(false)
@@ -115,3 +129,9 @@ export default function TaskPage() {
     </>
   )
 }
+
+/*
+* Side for oppgave, baserer info på hvilken oppgave spiller er på
+* Det finnes foreløpig to oppgaver
+* Blir routet til i App.js
+*/

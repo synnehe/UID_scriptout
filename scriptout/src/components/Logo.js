@@ -10,3 +10,8 @@ export default function Logo({logo}) {
     </Link>
   )
 }
+
+/*
+* Logo som blir gjenbrukt på alle sider
+* Gjennom className/id bestemmes det om logoen er i den store eller lille varianten
+*/

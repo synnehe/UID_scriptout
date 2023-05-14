@@ -24,3 +24,8 @@ export default function RulesPage() {
     </body>
   )
 }
+
+/*
+* Side med regler
+* Routes til fra App.js
+*/

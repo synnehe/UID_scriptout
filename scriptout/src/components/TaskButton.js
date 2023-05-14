@@ -1,8 +1,10 @@
 import { useState } from "react"
 
 export default function TaskButton({taskbutton, answers, setAnswers, index}) {
+  // State som bestemmer className på svarknapper
   const [btnClass, setBtnClass] = useState("taskbutton")
 
+  // Funksjon som oppdaterer verdien på en bestemt index i arrayen i useStaten "answers" ved klikk, basert på index fra knapp
   function toggleAnswer(i) {
     let updatedAnswers = []
 
@@ -16,6 +18,7 @@ export default function TaskButton({taskbutton, answers, setAnswers, index}) {
     toggleBtnClass(i) 
   }
 
+  // Funksjon som setter staten btnClass ved klikk på knapp, basert på index
   function toggleBtnClass(i){
     answers[i] ? setBtnClass("chosen-taskbutton") : setBtnClass("taskbutton")
     console.log(answers)
@@ -25,3 +28,8 @@ export default function TaskButton({taskbutton, answers, setAnswers, index}) {
     <button type="button" onClick={() => toggleAnswer(index)} className={btnClass}>{taskbutton}</button>
   )
 }
+
+/*
+* Knapp som endrer verdiene i useStaten "answers" ved klikk, basert på index
+* Blir brukt i komponentet Task1
+*/

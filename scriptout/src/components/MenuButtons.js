@@ -11,3 +11,8 @@ export default function MenuButtons() {
     </div>
   )
 }
+
+/*
+* Inneholder alle menyknapper
+* Blir brukt i komponentet HomePage
+*/

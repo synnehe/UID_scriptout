@@ -27,3 +27,8 @@ export default function Task1({answers, setAnswers, answerMessage, hideBubble}) 
     </>
   )
 }
+
+/*
+* Inneholder informasjon og svarknapper til oppgave 1
+* Blir brukt i komponentet TaskPage
+*/

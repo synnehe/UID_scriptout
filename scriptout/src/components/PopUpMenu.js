@@ -10,3 +10,8 @@ export default function PopUpMenu({activeMenu, setActiveMenu}) {
     </nav>
   )
 }
+
+/*
+* Pop-up menu som fører til ulike sider for lett navigasjon
+* Brukes i komponentene HistoryPage, InfoPage og TaskPage
+*/

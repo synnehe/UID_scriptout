@@ -6,12 +6,9 @@ import Logo from "./Logo"
 
 export default function TheoryPage() {
 
-  // Kilder brukt til teori: 
-  // https://lms.webtricks.blog/kurs/innforing-i-programmering 
-  // https://www.w3schools.com/js/js_scope.asp 
-
+  // State som toggler PopUp
   const [active, setActive] = useState(false)
-
+  // Funksjon som toggler staten active, kjører ved klikk på spørsmålstegn eller X på PopUp 
   const togglePopUp = () => {
     setActive(!active)
   }
@@ -74,3 +71,12 @@ export default function TheoryPage() {
     </body>
   )
 }
+
+/*
+* Side for teori
+* Routes til i App.js
+*
+* Kilder brukt til teori: 
+* https://lms.webtricks.blog/kurs/innforing-i-programmering 
+* https://www.w3schools.com/ 
+*/

@@ -4,4 +4,8 @@ export default function GoBtn({go, handleClick, answerMessage, nextTask, tryAgai
   )
 }
 
-// Satt en sperre etter oppgave 2 så man ikke kan gå videre til oppgave 3 ettersom den ikke har blitt laget enda. 
+/*
+* Knapp som blir brukt for å gå videre til neste side 
+* Satt en sperre etter oppgave 2 så man ikke kan gå videre til oppgave 3 ettersom den ikke har blitt laget enda. 
+* Brukes i komponentene HistoryPage, InfoPage og TaskPage
+*/

@@ -9,3 +9,8 @@ export default function PopUp({info, active, togglePopUp}) {
     </article>
   )
 }
+
+/*
+* Pop up med informasjon, aktiveres når "?" blir trykket
+* Blir brukt i komponentene HistoryPage, InfoPage, IntroPage, SettingsPage, TaskPage, TheoryPage
+*/

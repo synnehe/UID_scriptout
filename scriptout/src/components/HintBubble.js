@@ -9,3 +9,8 @@ export default function PopUp({hintInfo, hint, toggleHint, answerMessage}) {
     </article>
   )
 }
+
+/*
+* Pop-up av å trykke på hint knappen
+* Brukes i komponentet TaskPage
+*/

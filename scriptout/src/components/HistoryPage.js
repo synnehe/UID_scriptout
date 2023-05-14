@@ -8,17 +8,20 @@ import PopUpBtn from "./PopUpBtn";
 import Logo from "./Logo";
 
 export default function HistoryPage() {
+  // Info i spørsmålstegnet
   const info = "Her får du presentert backstoryen til spillet. Klikk gå videre for å gå til første rom"
 
+  // State som toggler PopUp
   const [active, setActive] = useState(false)
-
+  // Funksjon som toggler staten active, kjører ved klikk på spørsmålstegn eller X på PopUp 
   const togglePopUp = () => {
     setActive(!active)
     console.log(active)
   }
 
+  // State som toggler PopUpMenu
   const [activeMenu, setActiveMenu] = useState(false)
-
+  // Funksjon som toggler staten activeMenu, kjører ved klikk på PopUpMenu
   const togglePopMenu = () => {
       setActiveMenu(!activeMenu)
   }
@@ -50,3 +53,8 @@ export default function HistoryPage() {
     </body>
   )
 }
+
+/*
+* Siden spiller kommer til etter å ha trykket på start i meny-siden, forteller historien bak spillet 
+* Blir routet til i App.js
+*/

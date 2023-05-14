@@ -21,6 +21,7 @@ export default function Task2({answerMessage, setTask2Answer, hideBubble}) {
     "console.log(count)",
   ]
 
+  // Funksjon som endrer på staten task2Answer basert på verdien til svarfeltet
   function updateAnswer(){
     setTask2Answer(document.getElementById("svar-input").value)
   }
@@ -34,3 +35,8 @@ export default function Task2({answerMessage, setTask2Answer, hideBubble}) {
     </>
   )
 }
+
+/*
+* Inneholder informasjon og svarfelt til oppgave 2
+* Blir brukt i komponentet TaskPage
+*/
